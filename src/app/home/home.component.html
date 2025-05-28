@@ -1,0 +1,150 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row  p-5" style="background-color: #A8C686;" >
+        <div class="col-lg-1"></div>
+        <div  class="col-lg-4 text-light">
+            <h1 data-aos="zoom-in-right" class="mt-3" style="font-family: Style Script; ">The Easiest Way <br/> To Make Your Favourite Meal</h1>
+            <p  data-aos="zoom-in-right"  style="font-family: Rochester; color: rgb(8, 44, 21);">Discover 100+ recipes in your hand with the best recipe. Help you to find the easiest way to cook</p>
+
+            <a   routerLink="/recipes" style="color: white;"><button data-aos="zoom-in" class="explore p-2  mt-3" style=" border-radius: 5px;border: none; color: white; width: 120px; height: 40px; font-size: 15px;font-weight: 500; ">Explore more</button></a>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <img data-aos="zoom-in" class="landingImg"  src="https://www.pngmart.com/files/15/Food-Plate-Top-View-Snack-PNG.png" width="300px" height="300px" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 ">
+    <div class=" d-flex align-items-center justify-content-between ">
+        <div >
+            <h2 data-aos="zoom-in">Popular Recipe of the Week</h2>
+            <p>Our most popular recipe of the week</p>
+        </div>
+        <a class="view-all-link"  href="" routerLink="/recipes">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="row ">
+        @for(recipe of recipeList;track $index){
+            <div data-aos="zoom-in-up" class="col-lg-4">
+                <div class="p-3">
+                    <img (click)="view_recipe(recipe._id)" class="card-img-top" [src]="recipe.image" alt="">
+                </div>
+                <div class="card-body">
+                    <h5 class="ms-3">{{recipe.name}}</h5>
+    
+                </div>
+            </div>
+        }
+        <div class="align-items-center p-5 mt-5" style="background-image: url('https://img.freepik.com/free-photo/copy-space-italian-food-ingredients_23-2148551732.jpg?semt=ais_hybrid&w=740'); background-size: cover; ">
+            <div class="row" >
+                <div class="col-lg-6"></div>
+                
+                <div class="col-lg-6" >
+                    <div class=" rounded p-5">
+                        <h3>50+ Recipes That Very Quick And Fast</h3>
+                        <p class="mt-2">Find the perfect food ideas to start your day with the quick and easiest way</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    
+    
+</div>
+
+<div class="my-5 " >
+       <div class="container" > <h1 data-aos="zoom-in">Client Testimonials</h1></div>
+        <marquee >
+            <div class="d-flex my-3  "  >
+                @for(feed of feedbackList;track $index){
+                    <div class="border p-5 rounded my-3 w-25 me-4 img-fluid rounded shadow " style="width: 300px; background-color: #f1fce4;">
+                    <h1 style="font-family: Style Script;">{{feed.name}}</h1>
+                    <h3 style="text-align: justify; width: 100%; white-space: normal;">{{feed.message}}</h3>
+                </div>
+                }
+                
+            </div>
+        </marquee>
+
+    </div>
+
+    <div class="container download-section my-5 p-5">
+  <div class="row align-items-center ">
+    <div class="col-lg-6 text-center mb-4 mb-lg-0" >
+      <img data-aos="zoom-in" src="https://www.shutterstock.com/image-vector/download-app-mobile-phone-hand-600nw-2496668617.jpg" alt="Download App" height="280px" >
+    </div>
+    <div class="col-lg-6 text-center text-lg-start" >
+      <h2 class="text-dark fw-bold">Download App</h2>
+      <p data-aos="zoom-in-left" class="text-muted fs-6">Get the app from App Store or Google Play for the best recipe experience at your fingertips.</p>
+      <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-4">
+        <a href="#">
+          <img
+            width="140px"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
+            alt="Google Play"
+            class="store-badge"
+            data-aos="zoom-in"
+          />
+        </a>
+        <a href="#">
+          <img
+            width="140px"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png"
+            alt="App Store"
+            class="store-badge"
+            data-aos="zoom-in"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
+<style>
+    .landingImg {
+  transition: transform 1.0s ease-in-out;
+}
+
+.landingImg:hover {
+  transform: rotate(180deg);
+}
+.explore{
+    background-color: #8aab6a;
+
+}
+.explore:hover{
+    background-color: #60764a;
+    
+    
+}
+.view-all-link {
+  position: relative;
+  text-decoration: none;
+  color: rgb(93, 92, 92);
+  font-weight: bold;
+  display: inline-block;
+}
+
+.view-all-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: brown;
+  transition: width 0.3s ease-in-out;
+}
+
+.view-all-link:hover::after {
+  width: 100%;
+}
+
+
+</style>

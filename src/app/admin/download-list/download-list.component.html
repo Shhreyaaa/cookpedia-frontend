@@ -1,0 +1,35 @@
+<div>
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-10 mt-5" style="width:70%;">
+            <h2 data-aos="zoom-in" style="color: #6A5D7B; font-weight: bold;">Recipe Download List</h2>
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;"></th>
+                        <th style="width: 30%;">Recipe Id</th>
+                        <th style="width: 30%;">Recipe Name</th>
+                        <th>Cuisine</th>
+                        <th>Download Count</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (recipe of downloadList; track $index ;let i=$index) {
+                         <tr >
+                        <td>{{i+1}}</td>
+                        <td>{{recipe.recipeId}}</td>
+                        <td>{{recipe.recipeName}}</td>
+                        <td>{{recipe.recipeCuisine}}</td>
+                        <td>{{recipe.count}}</td>
+                        
+                    </tr>
+
+                    }
+                   
+                </tbody>
+            </table>
+    </div>
+</div>

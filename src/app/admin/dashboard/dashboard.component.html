@@ -1,0 +1,94 @@
+<div>
+    <div class="row">
+        @if(isSidebarOpen){
+            <div class="col-lg-2" style="background-color: #F7F3EF;">
+                <app-sidebar></app-sidebar>
+            </div>
+
+        }
+        
+        <div [class]="columnwidth">
+            <!-- navbar -->
+             <div class="row p-4" style="background-color: #F7F3EF; color: #4F4F4F;">
+                <div class="d-flex justify-content-between align-items-center">
+                <h2 >
+                    <button (click)="menuBtnClick()" class="btn"><i style="color: #4F4F4F;" class="fa-solid fa-bars fa-2x"></i></button>
+                    Welcome to admin dashboard
+                </h2>
+                <div class=" dropdown">
+        <button style="color: #4F4F4F;" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user fa-lg"></i>
+           
+            
+        </button>
+       
+          <ul class="dropdown-menu">            
+            <button (click)="logout()" class="btn">Logout</button>
+          </ul>
+                  </div>
+                </div>
+
+                
+             </div>
+             <div class="row my-5 p-3 " >
+                    <div class="col-lg-3">
+                        <div data-aos="zoom-in" class="d-flex align-items-center p-4 rounded justify-content-center" style="color:#4F4F4F ;background-color:#f8e6c5 ;">
+                            <i class="fa-solid fa-users fa-3x p-4" style="color:#fcca6e  ;"></i>
+                            <div class="ms-4">
+                                <h3>Users</h3>
+                                <h3>{{userCount}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div data-aos="zoom-in" class="d-flex align-items-center p-4 rounded justify-content-center" style="color:#4F4F4F ;background-color:#E0F8E0 ;">
+                            <i class="fa-solid fa-cake-candles fa-3x p-4" style="color: #a3faa3;"></i>
+                            <div class="ms-4">
+                                <h3>Recipes</h3>
+                                <h3>{{recipeCount}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div data-aos="zoom-in" class="d-flex align-items-center p-4 rounded justify-content-center" style="color:#4F4F4F ;background-color:#DDEEFF ;">
+                            <i class="fa-solid fa-download fa-3x p-4" style="color: #a3d1ff;"></i>
+                            <div class="ms-4">
+                                <h3>Downloads</h3>
+                                <h3>{{downloadCount}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div data-aos="zoom-in" class="d-flex align-items-center p-4 rounded justify-content-center" style="color:#4F4F4F ;background-color:#FDE2E4 ;">
+                            <i class="fa-solid fa-comments fa-3x p-4" style="color: #fda1a7 ;"></i>
+                            <div class="ms-3">
+                                <h3>Notifications</h3>
+                                <h6>You have <a routerLink="/admin/feedback-list" >{{FeedbackCount}}</a> new notification</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row ">
+                    <div class="col-lg-8">
+                        <!-- barchart -->
+                         <highcharts-chart 
+                            [Highcharts]="Highcharts"
+                            [options]="chartOptions"
+
+                            style="width: 100%; height: 400px; display: block;"
+                        ></highcharts-chart>
+                    </div>
+                    <div class="col-lg-4 pe-5">
+                        <!-- calender -->
+                        <mat-card class="demo-inline-calendar-card">
+                            <mat-calendar [(selected)]="selected"></mat-calendar>
+                        </mat-card>
+                    </div>
+                </div>
+
+
+        </div>
+    </div>
+</div>

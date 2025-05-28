@@ -1,0 +1,31 @@
+<div>
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-10 mt-5" style="width:70%;">
+            <h2 data-aos="zoom-in" style="color: #6A5D7B;font-weight: bold;">Users List</h2>
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Id</th>
+                        <th style="width: 30%;">Username</th>
+                        <th>Email</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (user of userList; track $index ;let i=$index) {
+                         <tr >
+                        <td>{{i+1}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        
+                    </tr>
+
+                    }
+                   
+                </tbody>
+            </table>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div>
+    <div class="row">
+        <div class="col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-10 mt-5" style="width:80%;">
+            <h2 data-aos="zoom-in" style="color: #6A5D7B; font-weight: bold;">Recipe List</h2>
+            <div class="mt-5 d-flex align-items-center justify-content-between">
+                <button data-aos="zoom-in" routerLink="/admin/add-recipe" class="btn btn-success">Add Recipe</button>
+                <input data-aos="zoom-in" type="text" class="form-control p-2" placeholder="Search by recipe name" style="width: 30%;">
+            </div>
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;"></th>
+                        <th style="width: 23%;">Recipe Name</th>
+                        <th style="width: 23%;">Image</th>
+                        <th style="width: 23%;">Cuisine</th>
+                        <th style="width: 15%;">Action</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(recipe of recipeList;track $index ;let i=$index){
+                         <tr >
+                        <td>{{i+1}}</td>
+                        <td>{{recipe.name}}</td>
+                        <td>
+                            <img [src]="recipe.image" alt="" width="100px" height="100px">
+                        </td>
+                        <td>{{recipe.cuisine}}</td>
+                        <td>
+                            <div class="d-flex">
+                                <button routerLink="/admin/edit-recipe/{{recipe._id}}" class="btn"><i class="fa-solid fa-edit text-primary"></i></button>
+                                <button (click)="deleteRecipe(recipe._id)" class="btn"><i class="fa-solid fa-trash text-danger"></i></button>
+                            </div>
+                        </td>
+                        
+                    </tr>
+
+                    }
+                   
+
+                    
+                   
+                </tbody>
+            </table>
+    </div>
+</div>
+

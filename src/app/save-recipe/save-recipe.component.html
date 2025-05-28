@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row align-items-center justify-content-center p-5 text-light fw-bold  mb-5" style="font-size: 40px;background-color: #A8C686;" >
+        Your Recipe Collection
+
+    </div>
+    <div class="row my-5">
+        @if(savedRecipe.length>0){
+          @for(recipe of savedRecipe;track $index){
+            <div class="col-lg-4">
+                <div class="p-3">
+                    <img routerLink="/view-recipe/{{recipe.recipeId}}" class="card-img-top" [src]="recipe.image" alt="">
+                </div>
+                <div class="card-body d-flex justify-content-between me-2">
+                    <h5 class="ms-3">{{recipe.name}}</h5> 
+                    <button (click)="removeSaveRecipe(recipe._id)" class="btn "><i class="fa-solid fa-trash text-danger"></i></button>
+    
+                </div>
+            </div>
+          }
+
+        }
+        @else {
+            <div class="fw-bold text-danger text-center">No recipes saved yet</div>
+        }
+    </div>
+</div>
+<app-footer></app-footer>

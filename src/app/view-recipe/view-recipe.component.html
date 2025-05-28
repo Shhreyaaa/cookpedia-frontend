@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mt-4 ">
+            <a routerLink="/recipes" style="text-decoration: none;" class="fw-bold text-success"><i class="fa-solid fa-arrow-left"></i> Back to Recipe List</a><br>
+            <img class="mt-4" [src]="recipe.image"alt="" style="width: 100%; height: 500px;">
+            <div class="d-flex justify-content-between mt-5 mb-5">
+                <button (click)="downloadRecipe()" class="btn btn-success">Download The Recipe</button>
+                <button (click)="saveRecipe()" class="btn btn-primary">save The Recipe</button>
+            </div>
+        </div>
+        <div class="col-lg-6 mt-4">
+            <h1>{{recipe.name}}</h1>
+            <div class="row justify-content-between mt-4 ">
+                <h6 class="col-lg-4 fw-bold">Cuisine: {{recipe.cuisine}}</h6>
+                <h6 class="col-lg-4 fw-bold">Servings: {{recipe.servings}}</h6>
+                <h6 class="col-lg-4 fw-bold">Mode of Cooking: {{recipe.difficulty}}</h6>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-4 mt-3 ">
+                    <img  style="width: 100px; height: 100px;" src="https://cdn-icons-png.freepik.com/256/1147/1147864.png?semt=ais_hybrid" alt="">
+                    <h6 class="mt-1 fw-bold">Preparation Time</h6>
+                    <h6 class="mt-1 ms-4" ><span class="text-success">{{recipe.prepTimeMinutes}}</span> mins</h6>
+                </div>
+                <div class="col-lg-4">
+                    <img style="width: 120px; height: 120px;" src="https://cdn-icons-png.flaticon.com/512/9173/9173972.png" alt="">
+                    <h6 class="fw-bold" >Cooking Time</h6>
+                    <h6 class="mt-1 ms-4 " ><span class="text-success">{{recipe.cookTimeMinutes}}</span> mins</h6>
+                </div>
+                <div class="col-lg-4 mt-2">
+                    <img style="width: 110px; height: 110px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgO3U7EQdOJm_hhQLFBeHwOs-NdHm_XmgYOwAQZzrbjlkbfG2jtrkrDwYjuWW6RfW8egM&usqp=CAU" alt="">
+                    <h6 class="fw-bold mt-1">Calorie Per Serving</h6>
+                    <h6 class="mt-1 ms-4"><span class="text-success">{{recipe.caloriesPerServing}}</span> Kcal</h6>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h3>Ingredients Needed</h3>
+                <ol>
+                    @for(ingredients of recipe.ingredients ; track $index ){                        
+                            <li>{{ingredients}}</li>  
+                        }
+                </ol>  
+               
+            </div>
+
+            <div class="mt-4">
+                <h3>Cooking Instruction</h3>
+                <ol>
+                   @for(instruction of recipe.instructions;track $index){
+                    <li>{{instruction}}</li>
+                   }
+                </ol>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>
