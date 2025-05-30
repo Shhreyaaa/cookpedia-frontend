@@ -30,7 +30,7 @@
                     <img (click)="view_recipe(recipe._id)" class="card-img-top" [src]="recipe.image" alt="">
                 </div>
                 <div class="card-body">
-                    <h5 class="ms-3">{{recipe.name}}</h5>
+                    <h5 class="ms-3 fw-bold text-muted">{{recipe.name}}</h5>
     
                 </div>
             </div>
@@ -40,9 +40,9 @@
                 <div class="col-lg-6"></div>
                 
                 <div class="col-lg-6" >
-                    <div class=" rounded p-5">
-                        <h3>50+ Recipes That Very Quick And Fast</h3>
-                        <p class="mt-2">Find the perfect food ideas to start your day with the quick and easiest way</p>
+                    <div class=" rounded p-5" style="font-family: Lato;">
+                        <h3 class="fw-bold text-muted">50+ Recipes That Very Quick And Fast</h3>
+                        <p class="mt-2 fw-bold text-muted">Find the perfect food ideas to start your day with the quick and easiest way</p>
                     </div>
 
                 </div>
@@ -60,9 +60,9 @@
         <marquee >
             <div class="d-flex my-3  "  >
                 @for(feed of feedbackList;track $index){
-                    <div class="border p-5 rounded my-3 w-25 me-4 img-fluid rounded shadow " style="width: 300px; background-color: #f1fce4;">
-                    <h1 style="font-family: Style Script;">{{feed.name}}</h1>
-                    <h3 style="text-align: justify; width: 100%; white-space: normal;">{{feed.message}}</h3>
+                    <div class="border p-4 rounded  w-25 me-4 img-fluid rounded shadow " style="width: 300px; background-color: #f1fce4;">
+                    <h2 style="font-family: Rochester;">{{feed.name}}</h2>
+                    <p style=" white-space: normal;">{{feed.message}}</p>
                 </div>
                 }
                 
@@ -74,15 +74,15 @@
     <div class="container download-section my-5 p-5">
   <div class="row align-items-center ">
     <div class="col-lg-6 text-center mb-4 mb-lg-0" >
-      <img data-aos="zoom-in" src="https://www.shutterstock.com/image-vector/download-app-mobile-phone-hand-600nw-2496668617.jpg" alt="Download App" height="280px" >
+      <img data-aos="zoom-in" src="https://www.shutterstock.com/image-vector/download-app-mobile-phone-hand-600nw-2496668617.jpg" alt="Download App" height="250px" >
     </div>
     <div class="col-lg-6 text-center text-lg-start" >
       <h2 class="text-dark fw-bold">Download App</h2>
-      <p data-aos="zoom-in-left" class="text-muted fs-6">Get the app from App Store or Google Play for the best recipe experience at your fingertips.</p>
+      <p data-aos="zoom-in-left" class="text-muted ">Get the app from App Store or Google Play for the best recipe experience at your fingertips.</p>
       <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-4">
         <a href="#">
           <img
-            width="140px"
+            width="120px"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
             alt="Google Play"
             class="store-badge"
@@ -91,7 +91,7 @@
         </a>
         <a href="#">
           <img
-            width="140px"
+            width="120px"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png"
             alt="App Store"
             class="store-badge"
